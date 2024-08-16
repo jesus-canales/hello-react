@@ -9,7 +9,6 @@ function App(){
       <HolaMundo />
       <Mensaje />
       <HolaMundo />
-
     </>
   );
 
