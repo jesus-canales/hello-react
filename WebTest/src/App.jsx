@@ -13,6 +13,11 @@ function App() {
         descripcion="Capital del Perú"
         imagen = "https://i.natgeofe.com/n/4b1eeacc-59c7-476e-8870-fadf135a998e/cathedral-lima-peru.jpg?w=2880&h=1912"
       />
+      <Ciudad
+      nombre = "Arequipa"
+      descripcion="Encantadora tierra volcánica"
+      imagen = "https://www.peru.travel/contenido/destino/imagen/es/3/1.2/principal/plaza%20de%20armas%20arequipa.jpg"
+       />
       <Pie />
     </>
   );
