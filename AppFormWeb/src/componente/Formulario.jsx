@@ -1,4 +1,4 @@
-import { Fragment, useState} from "react";
+import { Fragment, useState } from "react";
 import { Button, Form } from 'react-bootstrap';
 
 function Formulario() {
@@ -17,6 +17,8 @@ function Formulario() {
         }
         if ((regexTexto.test(nombre) === false && nombre != '') || (regexTexto.test(apellidos) === false && apellidos != '') || (regexNumero.test(celular) === false && celular != '') || (regexTexto.test(lugar) === false && lugar != '')) {
             alert('No se ha ingresado datos validos');
+            console.log('click');
+            alert(`Datos ingresados: { ${nombre}, ${apellidos}, ${celular}, ${lugar} }`);
         }
     }
 
@@ -28,12 +30,15 @@ function Formulario() {
     return (
         <>
             <Form onSubmit={realizarEnvio} >
-                <Form.Control type="text" value={nombre} onChange={cambioNombre} placeholder="Ingresa tu nombre"></Form.Control>
-                <Form.Control type="text" value={apellidos} onChange={cambioApellidos} placeholder="Ingresa tus apellidos"></Form.Control>
-                <Form.Control type="text" value={celular} onChange={cambioCelular} placeholder="Ingresa tu celular"></Form.Control>
-                <Form.Control type="text" value={lugar} onChange={cambioLugar} placeholder="Ingresa tu lugar de origen"></Form.Control>
+                <Form.Group>
+                    <Form.Control type="text" value={nombre} onChange={cambioNombre} placeholder="Ingresa tu nombre"></Form.Control>
+                    <Form.Control type="text" value={apellidos} onChange={cambioApellidos} placeholder="Ingresa tus apellidos"></Form.Control>
+                    <Form.Control type="text" value={celular} onChange={cambioCelular} placeholder="Ingresa tu celular"></Form.Control>
+                    <Form.Control type="text" value={lugar} onChange={cambioLugar} placeholder="Ingresa tu lugar de origen"></Form.Control>
+                </Form.Group>
+                <Button type="submit" >Enviar datos </Button>
             </Form>
-            <Button type="submit" >Enviar datos </Button>
+            
         </>
     );
 }
